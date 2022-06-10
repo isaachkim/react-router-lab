@@ -1,11 +1,21 @@
 import React from 'react';
 
-function Dashboard(props) {
-    return (
-        <div>
-            <h2>dashboard</h2>
-        </div>
-    );
+import { Link } from 'react-router-dom';
+
+function Dashboard({ stocks }) {
+	return (
+		<ul>
+			{stocks.map((stock, index) => {
+				return (
+					<li>
+						<Link key={index} to={`/stocks/${stock.symbol}`}>
+							{stock.name} - {stock.symbol}
+						</Link>
+					</li>
+				);
+			})}
+		</ul>
+	);
 }
 
 export default Dashboard;
