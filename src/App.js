@@ -12,23 +12,28 @@ function App() {
 
 	return (
 		<div className='App'>
-
 			<nav>
 				<ul>
 					<li>
-						<Link to='/'>Home</Link>
+						<Link to='/react-router-lab'>Home</Link>
 					</li>
 					<li>
-						<Link to='/about'>About</Link>
+						<Link to='/react-router-lab/about'>About</Link>
 					</li>
 				</ul>
 			</nav>
 			<Routes>
-				<Route path='' element={<Dashboard stocks={stocks} />} />
-				<Route path='/stocks' element={<Dashboard stocks={stocks} />} />
-				<Route path='/about' element={<About />} />
 				<Route
-					path='/stocks/:symbol'
+					path='/react-router-lab'
+					element={<Dashboard stocks={stocks} />}
+				/>
+				<Route
+					path='/react-router-lab/stocks'
+					element={<Dashboard stocks={stocks} />}
+				/>
+				<Route path='/react-router-lab/about' element={<About />} />
+				<Route
+					path='/react-router-lab/stocks/:symbol'
 					element={<StockDetails stocks={stocks} />}
 				/>
 			</Routes>
