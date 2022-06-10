@@ -4,17 +4,20 @@ import { Link } from 'react-router-dom';
 
 function Dashboard({ stocks }) {
 	return (
-		<ul>
-			{stocks.map((stock, index) => {
-				return (
-					<li>
-						<Link key={index} to={`/stocks/${stock.symbol}`}>
-							{stock.name} - {stock.symbol}
-						</Link>
-					</li>
-				);
-			})}
-		</ul>
+		<div className="list">
+			<h1>Dashboard</h1>
+			<ul>
+				{stocks.map((stock, index) => {
+					return (
+						<li key={index}>
+							<Link to={`/stocks/${stock.symbol}`}>
+								{stock.name} - {stock.symbol}
+							</Link>
+						</li>
+					);
+				})}
+			</ul>
+		</div>
 	);
 }
 
