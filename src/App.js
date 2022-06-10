@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import About from './Components/About';
 import Dashboard from './Components/Dashboard';
@@ -6,6 +6,7 @@ import StockDetails from './Components/StockDetails';
 import stockData from './data/stock-data.json';
 import { Route, Routes, Link } from 'react-router-dom';
 
+//process.env.REACT_APP_IEX_KEY
 function App() {
 	const [stocks, setStocks] = useState(stockData);
 
